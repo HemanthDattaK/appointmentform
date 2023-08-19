@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <center>
+    <h1><u><b>APPOINTMENT FORM</b></u></h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form><br>
+    <div>
+    <a href="{% url 'login' %}">Admin site</a>
+    </div>
+</center>
+
+</body>
+</html>

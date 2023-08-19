@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href=" {% static 'css/display.css' %} ">
+
+    <title>Contact Data</title>
+</head>
+<body>
+    <h1>Contact Data</h1>
+    <div>
+        {% for contact in contacts %}
+            <li>
+                <b>Name:</b> {{ contact.name }}<br>
+                <b>Surname:</b> {{ contact.surname }}<br>
+                <b>Phone Number:</b> {{ contact.phonenumber }}<br>
+                <b>Place:</b> {{ contact.place }}<br>
+                <b>Purpose of Visit:</b> {{ contact.purpose }}<br>
+            </li>
+        {% endfor %}
+        </div>
+</body>
+</html>
