@@ -131,7 +131,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'appoint')
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 
