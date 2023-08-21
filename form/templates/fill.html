@@ -1,10 +1,14 @@
 {% load static %}
 <html>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+
 <head>
     <title>Contact Form</title>
     <style>
 body
 {
+  box-shadow:0 20px 20px #CC313D;
+
     width: auto;
     height:auto;
     background-color: #0d0d0d;
@@ -13,10 +17,12 @@ form
 {
     border: 10px solid black;
     align-items: center;
-    width: 300px;
-    height: 330px;
+    width: 400px;
+    height: 500px;
     color:  #ffffff;
     background-color:#CC313D;
+    
+    
 }
 .topnav {
   background-color: #333;
@@ -64,6 +70,7 @@ button
     flex: 0 0 100%;
   }
   
+  /* For animation: move to the left */
   @keyframes moveLeft {
     0% {
       transform: translateX(0);
@@ -73,8 +80,10 @@ button
     }
   }
   
+  /* Change slides every 5 seconds */
   .carousel-inner {
     animation: moveLeft 15s infinite;
+    /* Adjust the timing and number of slides as needed */
   }
   .carousel {
     width: 100%;
@@ -103,23 +112,33 @@ button
   .carousel-inner {
     animation: moveLeft 15s infinite;
   }
-  h4
+  h4,h3,h5,h1
   {
     color: white;
   }
   .chan3
   {
-   width:1800px;
+   width:100%;
    height:50%;
     background-color:  #000000;
     text-align:center;  
+  }
+  .dev
+  {
+    box-shadow:0 20px 20px #CC313D;
+    background-color: black;
+    width:100%;
+    height:200px;
   }
     
     </style>
 </head>
 <body>
+    
     <center>
-<div class="topnav">
+
+   
+    <div class="topnav">
         <a class="active" href="#home">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Contact</a>
@@ -143,12 +162,15 @@ button
                 Chandrayaan-3 Moon-craft, pronunciation is the third and most recent Indian lunar exploration mission under the Chandrayaan programme of ISRO.
                 <br><br>
                 It consists of a lander named Vikram and a rover named Pragyan similar to Chandrayaan-2. Its propulsion module would act like an orbiter. The propulsion module carries the lander and rover configuration until the spacecraft is in a 100-kilometre  lunar orbit.
-                Following Chandrayaan-2, where a last-minute glitch in the landing guidance software led to the lander crashing after entering lunar orbit, another lunar mission was proposed.
-            </h4>
+                Following Chandrayaan-2, where a last-minute glitch in the landing guidance software led to the lander crashing after entering lunar orbit, another lunar mission was proposed.<br><br><br>
+              <img src="https://odishabhaskar.in/wp-content/uploads/2023/02/Chandrayaan-3.jpg" alt="not available" width="500px">
+              </h4>
           </div><br><br>
           <div class="chan3">
             <h4>
               The launch of Chandrayaan-3 took place on 14 July 2023, at 2:35 pm IST. The lander and rover are expected to land near the lunar south pole region on 23 August 2023. The powered descent is scheduled for 23 August 2023, around 05:45 pm IST and touchdown is expected on the same day around 06:05 pm IST.
+              As part of the Chandrayaan programme to demonstrate soft landing on the Moon, ISRO launched Chandrayaan-2 on board a Launch Vehicle Mark-3 (LVM3) launch vehicle consisting of an orbiter, a lander and a rover.[15] The lander was scheduled to touchdown on the lunar surface in September 2019 to deploy the Pragyan rover.
+              The European Space Tracking (ESTRACK) operated by European Space Agency (ESA) will support the mission according to a contract. Under the new cross-support arrangement, ESA tracking support could be provided for upcoming ISRO missions such as those of India’s first human spaceflight programme, Gaganyaan and the Aditya-L1 solar research mission. In return, future ESA missions will receive similar support from ISRO’s own tracking stations.[18]
             </h4>
           </div>
         <div class="div1">
@@ -164,6 +186,12 @@ button
     <div>
     </div>
 </center>
+<div class="dev">
+  <h3>Developed By:</h3>
+  <h5>K.Hemanth Datta</h5>
+  <h5>Web Developer</h5>
 
+</div>
+<center><h1><-------------------THANK YOU FOR VISITING------------------></h1></center>
 </body>
 </html>
