@@ -2,11 +2,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+<style>
+    body
+    {
+        border:20px solid #CC313D;
+        width:auto;
+        height:auto;
+        background-color:black;
+        text-color:white;
+        color:white;
+    }
+</style>
     <title>Contact Data</title>
 </head>
 <body>
-    <h1>Contact Data</h1>
+    <center>
+    <h1><b><u>Appointment Details</b></u></h1>
     <div>
         {% for contact in contacts %}
             <li>
@@ -18,5 +29,6 @@
             </li>
         {% endfor %}
         </div>
+    </center>
 </body>
 </html>
