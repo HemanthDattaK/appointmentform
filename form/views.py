@@ -54,8 +54,13 @@ def contact_view(request):
             contact.save()  # Save the form data
             
            
-            send_sms(contact.phonenumber, contact.name, contact.date, contact.time_slot_choice)  # Send SMS with details
-         
+            try:
+                # Try sending the SMS
+                send_sms(contact.phonenumber, contact.name, contact.date, contact.time_slot_choice)
+            except TwilioRestException as e:
+                # Handle Twilio exception (e.g., log the error)
+                print(f"Twilio Exception: {str(e)}")
+                # You can also add a message to indicate that the SMS sending failed         
 
             allocated_time = contact.time_slot_choice  # Store the allocated time in a variable
 
