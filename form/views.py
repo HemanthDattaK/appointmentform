@@ -9,15 +9,6 @@ from datetime import datetime, timedelta
 from django.conf import settings
 
 
-from django.http import HttpResponseBadRequest
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from .forms import ContactForm
-from .models import AppointmentLimit, Contact
-from .utils import send_sms  # Import your send_sms function
-from datetime import datetime, timedelta
-from django.conf import settings
-
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
