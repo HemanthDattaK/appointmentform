@@ -64,7 +64,7 @@ def contact_view(request):
             contact.save()  # Save the form data
             
            
-                send_sms(contact.phonenumber, contact.name, contact.date, contact.time_slot_choice)  # Send SMS with details
+            send_sms(contact.phonenumber, contact.name, contact.date, contact.time_slot_choice)  # Send SMS with details
          
 
             allocated_time = contact.time_slot_choice  # Store the allocated time in a variable
