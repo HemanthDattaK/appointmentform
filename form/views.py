@@ -63,11 +63,9 @@ def contact_view(request):
 
             contact.save()  # Save the form data
             
-            try:
+           
                 send_sms(contact.phonenumber, contact.name, contact.date, contact.time_slot_choice)  # Send SMS with details
-            except Exception as e:
-                # Handle the exception if SMS sending fails (you can log the error)
-                pass
+         
 
             allocated_time = contact.time_slot_choice  # Store the allocated time in a variable
 
