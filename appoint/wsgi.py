@@ -16,4 +16,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'appoint.settings')
 application = get_wsgi_application()
 
 # Add the 'app' variable
-app = application examine
+app = application
