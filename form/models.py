@@ -1,4 +1,6 @@
 from django.db import models
+from .models import Contact, AppointmentLimit
+
 
 class Contact(models.Model):
     TIMESLOT_LIST = (
