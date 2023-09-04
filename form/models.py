@@ -1,6 +1,4 @@
 from django.db import models
-from .models import Contact, AppointmentLimit
-
 
 class Contact(models.Model):
     TIMESLOT_LIST = (
@@ -22,7 +20,6 @@ class Contact(models.Model):
     purpose = models.CharField(max_length=100)
     date = models.DateField()
     time_slot_choice = models.CharField(max_length=13, choices=TIMESLOT_LIST)
-
 
     @property
     def default_time_slot(self):
@@ -53,4 +50,5 @@ class Contact(models.Model):
         return self.name
 
 class AppointmentLimit(models.Model):
-    limit = models.PositiveIntegerField(default=5)  # Default appointment limit
+    limit = models.PositiveIntegerField(default=5)  # Default appointment limit correct if any error
+
