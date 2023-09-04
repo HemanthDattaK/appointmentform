@@ -2,22 +2,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href=" {% static 'css/display.css' %} ">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body
+    {
+        background-image:url("https://i.pinimg.com/736x/d6/12/99/d61299e50d705d860c899f4fe0591773.jpg");
+        background-size:1800px 1800px;
+    }
+    /* Navigation */
+    .topnav {
+        overflow: hidden;
+    }
+    
+    .topnav a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    
+    .topnav a:hover {
+    
+      border-bottom: 3px solid  #009933
+      ;
+    }
+    
 
+.topnav a.active {
+    background-color: #CC313D;
+    color: white;
+}
+th{
+    background-color: #ffcc66;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #66ffff;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+table
+{
+    border:1px solid black;
+    width:100%;
+}
+.print
+{
+    float:right;
+}
+</style>
     <title>Contact Data</title>
+    <script src="https://kit.fontawesome.com/1db75a16db.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <h1>Contact Data</h1>
-    <div>
-        {% for contact in contacts %}
-            <li>
-                <b>Name:</b> {{ contact.name }}<br>
-                <b>Surname:</b> {{ contact.surname }}<br>
-                <b>Phone Number:</b> {{ contact.phonenumber }}<br>
-                <b>Place:</b> {{ contact.place }}<br>
-                <b>Purpose of Visit:</b> {{ contact.purpose }}<br>
-            </li>
-        {% endfor %}
+    <div class="topnav">
+        <a href="{% url 'contact' %}"><i class="fa-solid fa-house"></i><br>Home</a>
+        <a href="#news"><i class="fa-solid fa-newspaper"></i><br>News</a>
+        <a href="#contact"><i class="fa-solid fa-user"></i><br>Contact</a>
+        <a href="{% url 'contact' %}"><i class="fa-solid fa-calendar-check"></i><br>Book An Appointment</a>
+        <a href="{% url 'login' %}"><i class="fa-sharp fa-solid fa-user"></i><br>Admin login</a>
+    </div>
+    <center>
+        <div class="print">
+            <button id="print-button" class="btn btn-secondary" id="print"><i class="fa-solid fa-download"></i><i class="fa-solid fa-slash fa-rotate-270"></i><i class="fa-solid fa-print"></i><br>Download/Print</button>
         </div>
+        <div class="tb">
+            <table border="1px">
+                <h1><b><u>Appointment Details</b></u></h1>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Phone Number</th>
+                        <th>Place</th>
+                        <th>Purpose of Visit</th>
+                        <th>Date of the Appointment</th>
+                        <th>Time of the Appointment</th>
+                        <th>Action</th> <!-- Add a column for the "Delete" button -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                        <tr>
+                            <td>{{ contact.name }}</td>
+                            <td>{{ contact.surname }}</td>
+                            <td>{{ contact.phonenumber }}</td>
+                            <td>{{ contact.place }}</td>
+                            <td>{{ contact.purpose }}</td>
+                            <td>{{ contact.date }}</td>
+                            <td>{{ contact.time_slot_choice }}</td>
+                            <td>
+                                <form method="post" action="{% url 'contact_delete' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="contact_id" value="{{ contact.id }}">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </center>
+    <script>
+        document.getElementById('print-button').addEventListener('click', function() {
+            window.print();
+        });
+    </script>
 </body>
 </html>

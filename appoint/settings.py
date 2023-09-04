@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'appoint.urls'
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'appoint.wsgi.application'
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'cdlN5o5tUFS55KVIoEuz',
@@ -133,3 +135,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+# settings.py
+
+APPOINTMENT_START_TIME = '09:00'  # Set the desired start time
+APPOINTMENT_END_TIME = '17:30'    # Set the desired end time
+APPOINTMENT_INTERVAL_MINUTES = 30  # Set the interval in minutes
