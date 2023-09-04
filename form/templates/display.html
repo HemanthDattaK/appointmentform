@@ -61,16 +61,7 @@ table
     float:right;
 }
 
-    body
-    {
-        border:20px solid #CC313D;
-        width:auto;
-        height:auto;
-        background-color:black;
-        text-color:white;
-        color:white;
-    }
- 
+    
 </style>
     <title>Contact Data</title>
     <script src="https://kit.fontawesome.com/1db75a16db.js" crossorigin="anonymous"></script>
@@ -133,17 +124,7 @@ table
     </script>
     <center>
     <h1><b><u>Appointment Details</b></u></h1>
-    <div>
-        {% for contact in contacts %}
-            <li>
-                <b>Name:</b> {{ contact.name }}<br>
-                <b>Surname:</b> {{ contact.surname }}<br>
-                <b>Phone Number:</b> {{ contact.phonenumber }}<br>
-                <b>Place:</b> {{ contact.place }}<br>
-                <b>Purpose of Visit:</b> {{ contact.purpose }}<br>
-            </li>
-        {% endfor %}
-        </div>
+  
     </center>
 </body>
 </html>
