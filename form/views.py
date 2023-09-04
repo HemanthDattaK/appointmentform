@@ -7,6 +7,7 @@ from .forms import AppointmentTimeForm, ContactForm  # Import your ContactForm
 from twilio.rest import Client
 from datetime import datetime, timedelta
 from django.conf import settings
+from twilio.base.exceptions import TwilioRestException
 
 
 def contact_view(request):
