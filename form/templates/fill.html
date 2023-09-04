@@ -4,15 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Add other meta tags as needed -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/path/to/icon.png">
-    <link rel="icon" href="/path/to/favicon.ico" type="image/x-icon">
     <title>Contact Form</title>
     <style>
    /* Reset default margin and padding for all elements */
@@ -22,6 +13,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 
 /* Global styles */
 @media screen and (max-width: 768px) {
@@ -142,9 +134,6 @@
   height:500px;
 }
 
-
-
-
 .appimg
 {
   width:200px;
@@ -165,7 +154,6 @@ form{
     gap: 20px; /* Adjust the value as needed */
     align:center;
 
-    
 }
 .nav 
 {
@@ -175,7 +163,6 @@ body
 {
   border:30px solid white;
   border-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6bXxzH20NTxyBeyx5NwO_3O-amO7xFAuVpg&usqp=CAU") 30 round;
-  border-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180") 30 round;
 
 }
 .galaxy
@@ -193,7 +180,6 @@ hr
   display:block;
   border:none;
   height:20px;
-<<<<<<< HEAD
   width:700px;
   background-image:url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
   border-radius:50%;
@@ -201,11 +187,6 @@ hr
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
-  width:1000px;
-  background-image:url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
-} 
-    </style>
-    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
 
 </head>
 <body>
@@ -287,8 +268,6 @@ hr
 </h6>
 </div>
 <br><br>
-
-<hr><br><br>
 {% if messages %}
 <ul class="messages">
   {% for message in messages %}
@@ -306,7 +285,6 @@ hr
               {% csrf_token %}
               {{ form.as_p }}<br><br>
               <cenetr><button type="submit" class="sbt">Submit</button></center>     
-              <button type="submit" class="sbt">Submit</button>     
 
             </form><br><br><br>
 
