@@ -9,6 +9,15 @@ from datetime import datetime, timedelta
 from django.conf import settings
 
 
+from django.http import HttpResponseBadRequest
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import ContactForm
+from .models import AppointmentLimit, Contact
+from .utils import send_sms  # Import your send_sms function
+from datetime import datetime, timedelta
+from django.conf import settings
+
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -52,11 +61,16 @@ def contact_view(request):
                     break
 
             contact.save()  # Save the form data
-            send_sms(contact.phonenumber, contact.name, contact.date, contact.time_slot_choice)  # Send SMS with details
+            
+            try:
+                send_sms(contact.phonenumber, contact.name, contact.date, contact.time_slot_choice)  # Send SMS with details
+            except Exception as e:
+                # Handle the exception if SMS sending fails (you can log the error)
+                pass
 
             allocated_time = contact.time_slot_choice  # Store the allocated time in a variable
 
-            # Store the allocated time in the session
+            # Store the allocated time and other data in the session
             request.session['allocated_time'] = allocated_time
             request.session['name'] = contact.name
             request.session['surname'] = contact.surname
@@ -64,6 +78,7 @@ def contact_view(request):
             request.session['place'] = contact.place
             request.session['purpose'] = contact.purpose
             request.session['date'] = contact.date.strftime('%Y-%m-%d')
+            
             # Redirect to the success page
             return redirect('success')
 
@@ -74,6 +89,7 @@ def contact_view(request):
         form = ContactForm()
 
     return render(request, 'fill.html', {'form': form})
+
 
 
 
