@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -59,12 +60,25 @@ table
 {
     float:right;
 }
+=======
+<style>
+    body
+    {
+        border:20px solid #CC313D;
+        width:auto;
+        height:auto;
+        background-color:black;
+        text-color:white;
+        color:white;
+    }
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
 </style>
     <title>Contact Data</title>
     <script src="https://kit.fontawesome.com/1db75a16db.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
+<<<<<<< HEAD
     <div class="topnav">
         <a href="{% url 'contact' %}"><i class="fa-solid fa-house"></i><br>Home</a>
         <a href="#news"><i class="fa-solid fa-newspaper"></i><br>News</a>
@@ -119,5 +133,21 @@ table
             window.print();
         });
     </script>
+=======
+    <center>
+    <h1><b><u>Appointment Details</b></u></h1>
+    <div>
+        {% for contact in contacts %}
+            <li>
+                <b>Name:</b> {{ contact.name }}<br>
+                <b>Surname:</b> {{ contact.surname }}<br>
+                <b>Phone Number:</b> {{ contact.phonenumber }}<br>
+                <b>Place:</b> {{ contact.place }}<br>
+                <b>Purpose of Visit:</b> {{ contact.purpose }}<br>
+            </li>
+        {% endfor %}
+        </div>
+    </center>
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
 </body>
 </html>

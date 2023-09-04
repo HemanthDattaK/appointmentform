@@ -2,8 +2,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add other meta tags as needed -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/path/to/icon.png">
+    <link rel="icon" href="/path/to/favicon.ico" type="image/x-icon">
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
     <title>Contact Form</title>
     <style>
    /* Reset default margin and padding for all elements */
@@ -118,6 +129,7 @@
 }
 .div1
 {
+<<<<<<< HEAD
   width:auto;
   height:600px;
   display: flex;
@@ -133,6 +145,18 @@
   height:500px;
 }
 
+=======
+  background-image:url("https://thumbs.dreamstime.com/b/brown-lined-ripped-notebook-paper-sheet-sticked-black-wooden-wall-desk-70148680.jpg"); 
+  background-size: 1800px 900px;
+  width:auto;
+  height:900px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; 
+}
+
+
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
 .appimg
 {
   width:200px;
@@ -152,7 +176,11 @@ form{
     grid-template-columns: 1fr;
     gap: 20px; /* Adjust the value as needed */
     align:center;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
 }
 .nav 
 {
@@ -161,7 +189,11 @@ form{
 body
 {
   border:30px solid white;
+<<<<<<< HEAD
   border-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6bXxzH20NTxyBeyx5NwO_3O-amO7xFAuVpg&usqp=CAU") 30 round;
+=======
+  border-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180") 30 round;
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
 
 }
 .galaxy
@@ -179,6 +211,7 @@ hr
   display:block;
   border:none;
   height:20px;
+<<<<<<< HEAD
   width:700px;
   background-image:url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
   border-radius:50%;
@@ -186,6 +219,13 @@ hr
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
+=======
+  width:1000px;
+  background-image:url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
+} 
+    </style>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
 
 </head>
 <body>
@@ -266,7 +306,11 @@ hr
             ISRO is primarily responsible for performing tasks related to space-based operations, space exploration, international space cooperation and the development of related technologies.[2] It is one of the six government space agencies in the world which possess full launch capabilities, deploy cryogenic engines, launch extraterrestrial missions and operate a large fleet of artificial satellites.
 </h6>
 </div>
+<<<<<<< HEAD
 <br><br>
+=======
+<hr><br><br>
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
 {% if messages %}
 <ul class="messages">
   {% for message in messages %}
@@ -283,7 +327,11 @@ hr
           <form method="post">
               {% csrf_token %}
               {{ form.as_p }}<br><br>
+<<<<<<< HEAD
               <cenetr><button type="submit" class="sbt">Submit</button></center>     
+=======
+              <button type="submit" class="sbt">Submit</button>     
+>>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
 
             </form><br><br><br>
 
