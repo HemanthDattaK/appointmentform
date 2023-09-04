@@ -141,7 +141,4 @@ LOGOUT_REDIRECT_URL = "/"
 APPOINTMENT_START_TIME = '09:00'  # Set the desired start time
 APPOINTMENT_END_TIME = '17:30'    # Set the desired end time
 APPOINTMENT_INTERVAL_MINUTES = 30  # Set the interval in minutes
-<<<<<<< HEAD
-=======
 
->>>>>>> 4f105d7032efa90ddf5555479fb98d340574b2f4
