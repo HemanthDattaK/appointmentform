@@ -51,7 +51,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
-    
 ]
 
 ROOT_URLCONF = 'appoint.urls'
@@ -67,7 +66,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
             ],
         },
     },
@@ -81,7 +79,7 @@ WSGI_APPLICATION = 'appoint.wsgi.application'
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'cdlN5o5tUFS55KVIoEuz',
@@ -125,11 +123,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'form/static')]  # Changed to a list
 STATIC_URL = '/static/'
-
-
 
 
 # Default primary key field type
@@ -139,3 +135,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+# settings.py
+
+APPOINTMENT_START_TIME = '09:00'  # Set the desired start time
+APPOINTMENT_END_TIME = '17:30'    # Set the desired end time
+APPOINTMENT_INTERVAL_MINUTES = 30  # Set the interval in minutes
+
