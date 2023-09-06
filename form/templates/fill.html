@@ -87,7 +87,15 @@
 }
 
 .container {
-  overflow: hidden; /* Clear the float */
+  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6bXxzH20NTxyBeyx5NwO_3O-amO7xFAuVpg&usqp=CAU");
+    background-size: cover;
+    border: 30px solid white;
+    border-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6bXxzH20NTxyBeyx5NwO_3O-amO7xFAuVpg&usqp=CAU") 30 round;
+}
 }
 
 .chan1 {
@@ -119,13 +127,13 @@
  
 }
 .div1 {
-  width: 100%; /* Set an appropriate width for your layout */
-  height: 600px;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;
-  border: 10px solid #3366ff;
-  background-color: #3366ff;
+width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Set a maximum width for the content */
+    background-color: #3366ff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .div1-2
@@ -160,9 +168,13 @@ form{
 {
   float:left;
 }
-body {
+body, html {
   border: 30px solid white;
   border-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6bXxzH20NTxyBeyx5NwO_3O-amO7xFAuVpg&usqp=CAU") 30 round;
+  margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 .galaxy
 {
@@ -175,12 +187,11 @@ body {
   color:white;
 }
 hr {
-  display: block;
-  border: none;
-  height: 20px;
-  width: 100%; /* Ensure the hr spans the entire width */
-  background-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
-  border-radius: 50%;
+ border: none;
+    height: 20px;
+    background-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
+    background-size: cover;
+    border-radius: 50%;
 }
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
