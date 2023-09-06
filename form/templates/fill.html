@@ -117,16 +117,16 @@
   float:left;
  
 }
-.div1
-{
-  width:auto;
-  height:600px;
+.div1 {
+  width: 100%; /* Set an appropriate width for your layout */
+  height: 600px;
   display: flex;
   justify-content: center; /* Center horizontally */
-  align-items: center; 
-  border:10px solid #3366ff;
+  align-items: center;
+  border: 10px solid #3366ff;
   background-color: #3366ff;
 }
+
 .div1-2
 {
   background-color:white;
@@ -159,11 +159,9 @@ form{
 {
   float:left;
 }
-body
-{
-  border:30px solid white;
+body {
+  border: 30px solid white;
   border-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6bXxzH20NTxyBeyx5NwO_3O-amO7xFAuVpg&usqp=CAU") 30 round;
-
 }
 .galaxy
 {
@@ -175,15 +173,14 @@ body
 {
   color:white;
 }
-hr
-{
-  display:block;
-  border:none;
-  height:20px;
-  width:700px;
-  background-image:url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
-  border-radius:50%;
-} 
+hr {
+  display: block;
+  border: none;
+  height: 20px;
+  width: 100%; /* Ensure the hr spans the entire width */
+  background-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
+  border-radius: 50%;
+}
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
