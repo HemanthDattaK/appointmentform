@@ -191,13 +191,21 @@ hr {
     background-size: cover;
     border-radius: 50%;
 }
+         .full-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
 
 </head>
 <body>
-
+     <div class="full-screen">
   <script src="https://kit.fontawesome.com/1db75a16db.js" crossorigin="anonymous"></script>
  <center>
   <h1><b><u>APPOINTMENT FORM</u></b></h1>
@@ -300,4 +308,6 @@ hr {
     <br>
     
 </div>
+</div>
+</body>
 </html>
