@@ -16,14 +16,31 @@
 
 
 /* Global styles */
-@media screen and (max-width: 768px) {
-}
+ @media (max-width: 768px) {
+            .chan1 {
+                flex-basis: 100%;
+            }
+        }
 .container {
     width: 100%; 
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
-
+.chan1 {
+  background-color:black;
+  color:white;
+  float: left;
+    flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 50px;
+  border: 50px solid white;
+  width: 100%;
+  display: inline-block;
+}
 .center-text {
     text-align: center;
 }
@@ -94,17 +111,7 @@
   display: flex;
 }
 
-.chan1 {
-  background-color:black;
-  color:white;
-  float: left;
 
-  box-sizing: border-box;
-  padding: 50px;
-  border: 50px solid white;
-  width: 100%;
-  display: inline-block;
-}
 .mangimg
 {
   float:right;
