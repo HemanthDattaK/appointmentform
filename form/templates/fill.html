@@ -25,8 +25,6 @@
     flex-wrap: wrap;
 }
 .chan1 {
-    overflow-x: auto; /* Horizontal scroll if needed */
-  white-space: nowrap; /* Prevent text from wrapping */
   background-color:black;
   color:white;
   float: left;
@@ -35,17 +33,12 @@
   box-sizing: border-box;
   padding: 50px;
   border: 50px solid white;
-  width: 30%; /* Adjust the width as needed */
+  width: 100%;
   display: inline-block;
 }
         @media screen and (max-width: 768px) {
   .container {
     flex-direction: column; /* Stack divs vertically on smaller screens */
-  }
-}
-        @media (max-width: 768px) {
-  .box {
-    width: 100%; /* Full width on smaller screens */
   }
 }
 .center-text {
