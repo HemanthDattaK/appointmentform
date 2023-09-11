@@ -177,12 +177,17 @@
                 display: inline-block;
             }
 
-/* Carousel */
+/* Styles for the carousel container */
+.carousel-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Styles for the carousel itself */
 .carousel {
     width: 100%;
     overflow: hidden;
     position: relative;
-    margin-top: 20px;
 }
 
 .carousel-inner {
@@ -194,6 +199,14 @@
     flex: 0 0 100%;
 }
 
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .slide {
+        flex: 0 0 50%;
+    }
+}
+
+/* Keyframes animation for sliding */
 @keyframes moveLeft {
     0% {
         transform: translateX(0);
@@ -204,7 +217,7 @@
 }
 
 .carousel-inner {
-    animation: moveLeft 15s infinite;
+    animation: moveLeft 5s infinite;
 }
 
             .img1 {
