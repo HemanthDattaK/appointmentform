@@ -6,195 +6,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <style>
-   /* Reset default margin and padding for all elements */
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        /* Reset default margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
 
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-/* Global styles */
+        .chan1 {
+            background-color: black;
+            color: white;
+            float: left;
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+            padding: 50px;
+            border: 50px solid white;
+            width: 100%;
+            display: inline-block;
+        }
 
-.container {
-    width: 100%; 
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.chan1 {
-  background-color:black;
-  color:white;
-  float: left;
-   flex: 1;
-   padding: 10px;
-  box-sizing: border-box;
-  padding: 50px;
-  border: 50px solid white;
-  width: 100%;
-  display: inline-block;
-}
         @media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Stack divs vertically on smaller screens */
-  }
-}
-.center-text {
-    text-align: center;
-}
+            .container {
+                flex-direction: column; /* Stack divs vertically on smaller screens */
+            }
+        }
 
-/* Navigation */
-.topnav {
-    overflow: hidden;
-}
+        .center-text {
+            text-align: center;
+        }
 
-.topnav a {
-    float: left;
-    color: white ;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+        /* Navigation */
+        .topnav {
+            overflow: hidden;
+        }
 
-}
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
 
-.topnav a:hover {
+        .topnav a:hover {
+            border-bottom: 3px solid #3366ff;
+        }
 
-  border-bottom: 3px solid #3366ff;
-}
+        /* Carousel */
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
 
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-/* Carousel */
-.carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-top: 20px;
-}
+        .slide {
+            flex: 0 0 100%;
+        }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+        @keyframes moveLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
 
-.slide {
-    flex: 0 0 100%;
-}
+        .carousel-inner {
+            animation: moveLeft 15s infinite;
+        }
 
-@keyframes moveLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
+        .img1 {
+            border-radius: 50%;
+            width: 75px;
+        }
 
-.carousel-inner {
-    animation: moveLeft 15s infinite;
-}
+        .container {
+            overflow: hidden; /* Clear the float */
+            width: 100%; /* Set an appropriate width for your layout */
+            height: auto; /* Auto height for responsiveness */
+            display: flex;
+            flex-wrap: wrap;
+        }
 
+        .mangimg {
+            float: right;
+        }
 
-.img1
-{
-  border-radius:50%;
-  width:75px
-}
+        .mang {
+            width: 100%;
+        }
 
-.container {
-  overflow: hidden; /* Clear the float */
-     width: 100%; /* Set an appropriate width for your layout */
-  height: 600px;
-  display: flex;
-}
+        .isro {
+            width: 100%;
+            max-height: 300px; /* Set a maximum height for responsiveness */
+        }
 
+        .isroimg {
+            float: left;
+        }
 
-.mangimg
-{
-  float:right;
-}
-.mang
-{
-  width:100%;
-}
-.isro
-{
-  width:100%;
-  height:300px; 
-  
-}
-.isroimg
-{
-  float:left;
- 
-}
-.div1 {
-  width: 100%; /* Set an appropriate width for your layout */
-  height: 600px;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;
-  border: 10px solid #3366ff;
-  background-color: #3366ff;
-}
+        .div1 {
+            width: 100%; /* Set an appropriate width for your layout */
+            height: auto; /* Auto height for responsiveness */
+            display: flex;
+            flex-direction: column; /* Stack content vertically on smaller screens */
+            align-items: center; /* Center horizontally */
+            border: 10px solid #3366ff;
+            background-color: #3366ff;
+        }
 
-.div1-2
-{
-  background-color:white;
-  width:600px;
-  height:500px;
-}
+        .div1-2 {
+            background-color: white;
+            width: 100%;
+            max-width: 600px; /* Set a maximum width for responsiveness */
+            padding: 20px;
+        }
 
-.appimg
-{
-  width:200px;
-  height:100px;
-}
-.sbt
-{
-  background-color:#3366ff; 
-  color:white;
-  width:300px;
-  height:25px;
-  border-radius:8%;
-  border:1px solid #fff;
-}
-form{
-  display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px; /* Adjust the value as needed */
-    align:center;
+        .appimg {
+            width: 200px;
+            height: 100px;
+        }
 
-}
-.nav 
-{
-  float:left;
-}
+        .sbt {
+            background-color: #3366ff;
+            color: white;
+            width: 300px;
+            height: 25px;
+            border-radius: 8%;
+            border: 1px solid #fff;
+        }
 
-.galaxy
-{
-     background-image:url("https://cdn.wallpapersafari.com/80/31/8uLjyU.jpg");
-     background-size: 1800px 900px;
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px; /* Adjust the value as needed */
+            align: center;
+        }
 
-}
-.details
-{
-  color:white;
-}
-hr {
-  display: block;
-  border: none;
-  height: 20px;
-  width: 75%; /* Ensure the hr spans the entire width */
-  background-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
-  border-radius: 50%;
-}
-          @media screen and (max-width: 500px) {
-  
+        .nav {
+            float: left;
+        }
+
+        .galaxy {
+            background-image: url("https://cdn.wallpapersafari.com/80/31/8uLjyU.jpg");
+            background-size: cover;
+        }
+
+        .details {
+            color: white;
+        }
+
+        hr {
+            display: block;
+            border: none;
+            height: 20px;
+            width: 75%; /* Ensure the hr spans the entire width */
+            background-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkKMywiZvD5AwHaHa&pid=Api&P=0&w=300&h=300");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #3366ff;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
             .chan1 {
-                width: 70%;
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 10px solid white;
+                display: inline-block;
+            }
+
+            .carousel-inner {
+                animation: none; /* Disable the carousel animation on smaller screens */
+            }
+
+            .carousel-inner {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .img1 {
+                width: 50px;
+            }
+
+            .mangimg {
+                float: none;
+                width: 100%;
+            }
+
+            .isro {
+                max-height: none;
+            }
+
+            .isroimg {
+                float: none;
+                width: 100%;
+            }
+
+            .div1 {
+                border: 5px solid #3366ff;
             }
         }
     </style>
