@@ -16,11 +16,7 @@
 
 
 /* Global styles */
- @media (max-width: 768px) {
-            .chan1 {
-                flex-basis: 100%;
-            }
-        }
+
 .container {
     width: 100%; 
     margin: 0 auto;
@@ -35,11 +31,15 @@
    flex: 1;
    padding: 10px;
   box-sizing: border-box;
-  box-sizing: border-box;
   padding: 50px;
   border: 50px solid white;
   width: 100%;
   display: inline-block;
+}
+        @media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack divs vertically on smaller screens */
+  }
 }
 .center-text {
     text-align: center;
