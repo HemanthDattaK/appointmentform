@@ -91,25 +91,19 @@
         <a href="{% url 'contact' %}"><i class="fas fa-calendar-check"></i><br>Book An Appointment</a>
         <a href="{% url 'login' %}"><i class="fas fa-solid fa-user"></i><br>Admin login</a>
     </div>
-    <div class="container">
+     <div class="container">
         <div class="book">
-            <a href="{% url 'contact' %}">
-                <h1>Book An Appointment</h1>
-                <img src="{% static 'images/appointments.png' %}" alt="not available">
-            </a>
+          <a href="{% url 'contact' %}"><h1>Book An Appointment</h1></a>
+           <a href="{% url 'contact' %}"><img src="https://eventgurus.net/images/Appointments.png" alt="not available"></a><br>
         </div>
         <div class="book">
-            <a href="{% url 'display' %}">
-                <h1>List of Appointments</h1>
-                <img src="{% static 'images/list_of_appointments.png' %}" alt="not available">
-            </a>
+            <a href="{% url 'display' %}"><h1>List of Appointments</h1></a>
+            <a href="{% url 'display' %}"><br><img src="https://media.wired.com/photos/5a0a38c1d07f6824ff44221b/master/w_2560%2Cc_limit/twitterlists-TA.jpg" alt="not available"></a>   
         </div>
         <div class="book">
-            <a href="{% url 'set_times' %}">
-                <h1>Appointment Settings</h1>
-                <img src="{% static 'images/appointment_settings.png' %}" alt="not available">
-            </a>
-        </div>
+            <a href="{% url 'set_times' %}"><h1>Appointment Settings</h1></a>
+            <a href="{% url 'set_times' %}"><br><img src="https://cdn-icons-png.flaticon.com/512/3603/3603959.png" alt="not available"></a>
+        </div>    
     </div>
 </body>
 </html>
