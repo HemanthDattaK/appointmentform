@@ -76,7 +76,7 @@
             margin-top: 20px;
         }
 
-  /* Carousel */
+/* Carousel */
 .carousel {
     width: 100%;
     overflow: hidden;
@@ -87,10 +87,12 @@
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    overflow: hidden; /* Ensure content doesn't overflow on smaller screens */
 }
 
 .slide {
     flex: 0 0 100%;
+    min-width: 100%; /* Ensure each slide takes up the full width of the viewport */
 }
 
 @keyframes moveLeft {
@@ -99,6 +101,16 @@
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+/* Mobile-friendly styles */
+@media (max-width: 768px) {
+    .carousel-inner {
+        flex-direction: column; /* Stack slides vertically on smaller screens */
+    }
+    .slide {
+        min-width: 100%;
     }
 }
 
