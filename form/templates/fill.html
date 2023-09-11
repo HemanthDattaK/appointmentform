@@ -177,17 +177,11 @@
                 display: inline-block;
             }
 
-/* Styles for the carousel container */
-.carousel-container {
-    max-width: 100%;
-    overflow: hidden;
-}
-
-/* Styles for the carousel itself */
 .carousel {
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-top: 20px;
 }
 
 .carousel-inner {
@@ -199,14 +193,6 @@
     flex: 0 0 100%;
 }
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-    .slide {
-        flex: 0 0 50%;
-    }
-}
-
-/* Keyframes animation for sliding */
 @keyframes moveLeft {
     0% {
         transform: translateX(0);
@@ -217,7 +203,7 @@
 }
 
 .carousel-inner {
-    animation: moveLeft 5s infinite;
+    animation: moveLeft 15s infinite;
 }
 
             .img1 {
@@ -264,7 +250,6 @@
         <a href="{% url 'login' %}"><i class="fa-sharp fa-solid fa-user"></i><br>Admin login</a>
       </div>
     </div>
-      <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-inner">
                 <div class="slide">
