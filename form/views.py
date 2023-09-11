@@ -8,7 +8,8 @@ from twilio.rest import Client
 from datetime import datetime, timedelta
 from django.conf import settings
 from twilio.base.exceptions import TwilioRestException
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_user
+
 
 
 def contact_view(request):
@@ -88,7 +89,7 @@ def contact_view(request):
 
 
 
-@login_required
+@login_user
 def set_appointment_times(request):
     if request.method == 'POST':
         form = AppointmentTimeForm(request.POST)
@@ -116,7 +117,7 @@ def set_appointment_times(request):
 
     return render(request, 'set.html', {'form': form})
 
-@login_required
+@login_user
 def contact_display_view(request):
     if request.method == 'POST':
         contact_id = request.POST.get('contact_id')  # Assuming you have an input field with 'contact_id' in your template
@@ -204,7 +205,7 @@ def send_sms(phone_number, name, date, time_slot):
     )
 
 
-@login_required
+@login_user
 def set_appointment_limits(request):
     appointment_limit = AppointmentLimit.objects.first()
 
@@ -218,6 +219,6 @@ def set_appointment_limits(request):
 
     return render(request, 'set_appointment_limits.html', {'form': form})
 
-@login_required
+@login_user
 def afterview(request):
     return render(request,'admin.html')
