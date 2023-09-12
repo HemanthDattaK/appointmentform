@@ -5,262 +5,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <script>
-    const carouselInner = document.querySelector('.carousel-inner');
-    const slides = document.querySelectorAll('.slide');
-
-    let currentIndex = 0;
-
-    function showSlide(index) {
-        if (index < 0 || index >= slides.length) {
-            return;
-        }
-        currentIndex = index;
-        const translateXValue = -currentIndex * 100;
-        carouselInner.style.transform = `translateX(${translateXValue}%)`;
-    }
-
-    // Function to go to the next slide
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-    }
-
-    // Function to go to the previous slide
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-    }
-
-    // Example: Add event listeners for navigation buttons
-    const nextButton = document.querySelector('#next-button');
-    const prevButton = document.querySelector('#prev-button');
-
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
-</script>
     <style>
-        /* Reset default margin and padding for all elements */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+   /* Reset default margin and padding for all elements */
 
-        /* Global styles */
-        body {
-            font-family: Arial, sans-serif;
-        }
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .container {
+
+/* Global styles */
+@media screen and (max-width: 768px) {
+}
+.container {
+    width: 100%; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* Navigation */
+.topnav {
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: white ;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+.topnav a:hover {
             width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
 
-        .chan1 {
-            background-color: black;
-            color: white;
-            float: left;
-            flex: 1;
-            padding: 10px;
-            box-sizing: border-box;
-            padding: 50px;
-            border: 50px solid white;
-            width: 100%;
-            display: inline-block;
-        }
+  border-bottom: 3px solid #3366ff;
+}
 
-        @media screen and (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Stack divs vertically on smaller screens */
-            }
-        }
 
-        .center-text {
-            text-align: center;
-        }
+/* Carousel */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
 
-        /* Navigation */
-        .topnav {
-            overflow: hidden;
-        }
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-        .topnav a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
+.slide {
+    flex: 0 0 100%;
+}
 
-        .topnav a:hover {
-            border-bottom: 3px solid #3366ff;
-        }
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
-       
+.carousel-inner {
+    animation: moveLeft 15s infinite;
+}
 
-        .img1 {
-            border-radius: 50%;
-            width: 75px;
-        }
 
-        .container {
-            overflow: hidden; /* Clear the float */
-            width: 100%; /* Set an appropriate width for your layout */
-            height: auto; /* Auto height for responsiveness */
-            display: flex;
-            flex-wrap: wrap;
-        }
+.img1
+{
+  border-radius:50%;
+  width:75px
+}
 
-        .mangimg {
-            float: right;
-        }
+.container {
+  overflow: hidden; /* Clear the float */
+     width: 100%; /* Set an appropriate width for your layout */
+  height: 600px;
+  display: flex;
+}
 
-        .mang {
-            width: 100%;
-        }
+.chan1 {
+  background-color:black;
+  color:white;
+  float: left;
 
-        .isro {
-            width: 100%;
-            max-height: 300px; /* Set a maximum height for responsiveness */
-        }
+  box-sizing: border-box;
+  padding: 50px;
+  border: 50px solid white;
+  width: 25%;
+  display: inline-block;
+}
+.mangimg
+{
+  float:right;
+}
+.mang
+{
+  width:100%;
+}
+.isro
+{
+  width:100%;
+  height:300px; 
+  
+}
+.isroimg
+{
+  float:left;
+ 
+}
+.div1 {
+  width: 100%; /* Set an appropriate width for your layout */
+  height: 600px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  border: 10px solid #3366ff;
+  background-color: #3366ff;
+}
 
-        .isroimg {
-            float: left;
-        }
+.div1-2
+{
+  background-color:white;
+  width:600px;
+  height:500px;
+}
 
-        .div1 {
-            width: 100%; /* Set an appropriate width for your layout */
-            height: auto; /* Auto height for responsiveness */
-            display: flex;
-            flex-direction: column; /* Stack content vertically on smaller screens */
-            align-items: center; /* Center horizontally */
-            border: 10px solid #3366ff;
-            background-color: #3366ff;
-        }
+.appimg
+{
+  width:200px;
+  height:100px;
+}
+.sbt
+{
+  background-color:#3366ff; 
+  color:white;
+  width:300px;
+  height:25px;
+  border-radius:8%;
+  border:1px solid #fff;
+}
+form{
+  display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; /* Adjust the value as needed */
+    align:center;
 
-        .div1-2 {
-            background-color: white;
-            width: 100%;
-            max-width: 600px; /* Set a maximum width for responsiveness */
-        }
+}
+.nav 
+{
+  float:left;
+}
 
-        .appimg {
-            width: 200px;
-            height: 100px;
-        }
+.galaxy
+{
+     background-image:url("https://cdn.wallpapersafari.com/80/31/8uLjyU.jpg");
+     background-size: 1800px 900px;
 
-        .sbt {
-            background-color: #3366ff;
-            color: white;
-            width: 300px;
-            height: 25px;
-            border-radius: 8%;
-            border: 1px solid #fff;
-        }
-
-        form {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px; /* Adjust the value as needed */
-            align: center;
-        }
-
-        .nav {
-            float: left;
-        }
-
-        .galaxy {
-            background-image: url("https://cdn.wallpapersafari.com/80/31/8uLjyU.jpg");
-            background-size: cover;
-        }
-
-        .details {
-            color: white;
-        }
-
-        hr {
-            display: block;
+}
+.details
+{
+  color:white;
+}
+hr {
+  display: block;
   border: none;
   height: 20px;
   width: 75%; /* Ensure the hr spans the entire width */
   background-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
   border-radius: 50%;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #3366ff;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        /* Responsive Adjustments */
-        @media screen and (max-width: 768px) {
-            .chan1 {
-                width: 100%;
-                padding: 10px;
-                box-sizing: border-box;
-                border: 10px solid white;
-                display: inline-block;
-            }
-
-       .carousel {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            margin-top: 20px;
-        }
-
-        /* Carousel inner container */
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            animation: moveLeft 15s infinite; /* Apply animation to the inner container */
-        }
-
-        /* Individual carousel slide */
-        .slide {
-            flex: 0 0 100%;
-        }
-
-        /* Keyframes for the animation */
-        @keyframes moveLeft {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-            .img1 {
-                width: 50px;
-            }
-
-            .mangimg {
-                float: none;
-                width: 100%;
-            }
-
-            .isro {
-                max-height: none;
-            }
-
-            .isroimg {
-                float: none;
-                width: 100%;
-            }
-
-            .div1 {
-                border: 5px solid #3366ff;
-            }
-        }
+}
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
@@ -283,7 +207,7 @@
         <a href="{% url 'login' %}"><i class="fa-sharp fa-solid fa-user"></i><br>Admin login</a>
       </div>
     </div>
-       <div class="carousel">
+      <div class="carousel">
             <div class="carousel-inner">
               <div class="slide">
                 <img src="https://www.hindustantimes.com/ht-img/img/2023/08/20/550x309/ANI-20230820127-0_1692553997653_1692554011581.jpg" alt="Slide 1"><br><h1>Chandrayaan3</h1>
@@ -291,9 +215,7 @@
               <div class="slide">
                 <img src="https://thecryoclinic.com/wp-content/uploads/2019/01/Book-Your-Appointment-580x362.png" alt="Slide 2"><br><h1></h1>
               </div>
-              <div class="slide">
-                <img src="data:image/jpeg;base64,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" alt="Slide 3">
-            </div>
+              
             </div>
         <div class="details">  
           <h3><b>Abbreviation:</b>ISRO</h3>
@@ -345,7 +267,7 @@
        <h6> The Indian Space Research Organisation, commonly referred to as ISRO , is the national space agency of India. It operates as the primary research and development arm of the Department of Space (DoS), which is directly overseen by the Prime Minister of India, while the Chairman of ISRO also acts as the executive of DoS.
             ISRO is primarily responsible for performing tasks related to space-based operations, space exploration, international space cooperation and the development of related technologies.[2] It is one of the six government space agencies in the world which possess full launch capabilities, deploy cryogenic engines, launch extraterrestrial missions and operate a large fleet of artificial satellites.
 </h6>
-</div>
+</div>          
 <br><br>
 {% if messages %}
 <ul class="messages">
