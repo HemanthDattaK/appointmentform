@@ -15,18 +15,6 @@
 }
 
 
-/* Global styles */
-@media screen and (max-width: 768px) {
-}
-.container {
-    width: 100%; 
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.center-text {
-    text-align: center;
-}
 
 /* Navigation */
 .topnav {
@@ -88,23 +76,36 @@
 }
 
 .container {
-  overflow: hidden; /* Clear the float */
-     width: 100%; /* Set an appropriate width for your layout */
-  height: 600px;
-  display: flex;
-}
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-.chan1 {
-  background-color:black;
-  color:white;
-  float: left;
+        .chan1 {
+            background-color: black;
+            color: white;
+            float: left;
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+            padding: 50px;
+            border: 50px solid white;
+            width: 100%;
+            display: inline-block;
+        }
 
-  box-sizing: border-box;
-  padding: 50px;
-  border: 50px solid white;
-  width: 25%;
-  display: inline-block;
-}
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack divs vertically on smaller screens */
+            }
+        }
+
+        .center-text {
+            text-align: center;
+        }
 .mangimg
 {
   float:right;
