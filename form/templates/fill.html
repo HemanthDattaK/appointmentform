@@ -5,6 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
+    <script>
+    const carouselInner = document.querySelector('.carousel-inner');
+    const slides = document.querySelectorAll('.slide');
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        if (index < 0 || index >= slides.length) {
+            return;
+        }
+        currentIndex = index;
+        const translateXValue = -currentIndex * 100;
+        carouselInner.style.transform = `translateX(${translateXValue}%)`;
+    }
+
+    // Function to go to the next slide
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    // Function to go to the previous slide
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    // Example: Add event listeners for navigation buttons
+    const nextButton = document.querySelector('#next-button');
+    const prevButton = document.querySelector('#prev-button');
+
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+</script>
     <style>
         /* Reset default margin and padding for all elements */
         * {
