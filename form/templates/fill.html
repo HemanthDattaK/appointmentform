@@ -177,36 +177,34 @@
                 display: inline-block;
             }
 
-/* Carousel */
-.carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-top: 20px;
-}
+       .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+        /* Carousel inner container */
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            animation: moveLeft 15s infinite; /* Apply animation to the inner container */
+        }
 
-.slide {
-    flex: 0 0 100%;
-}
+        /* Individual carousel slide */
+        .slide {
+            flex: 0 0 100%;
+        }
 
-@keyframes moveLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.carousel-inner {
-    animation: moveLeft 15s infinite;
-}
-
+        /* Keyframes for the animation */
+        @keyframes moveLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
             .img1 {
                 width: 50px;
             }
