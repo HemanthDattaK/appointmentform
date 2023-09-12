@@ -176,36 +176,22 @@
                 border: 10px solid white;
                 display: inline-block;
             }
-/* Carousel */
-.carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-top: 20px;
-}
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+       .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
 
-.slide {
-    flex: 0 0 100%;
-}
+        /* Carousel inner container */
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            animation: moveLeft 15s infinite; /* Apply animation to the inner container */
+        }
 
-@keyframes moveLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.carousel-inner {
-    animation: moveLeft 15s infinite;
-}
- /* Individual carousel slide */
+        /* Individual carousel slide */
         .slide {
             flex: 0 0 100%;
         }
@@ -219,7 +205,7 @@
                 transform: translateX(-100%);
             }
         }
-         .img1 {
+            .img1 {
                 width: 50px;
             }
 
