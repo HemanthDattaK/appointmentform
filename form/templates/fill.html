@@ -186,6 +186,14 @@ iframe {
     width: 100%;
     height: 1000px;
 }
+        #jitsi-container
+        {
+            height: 900px;
+        }
+        #participant-jitsi-container
+        {
+            height: 900px;
+        }
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
@@ -280,7 +288,7 @@ iframe {
         // Initialize Jitsi for the host
         const hostContainer = document.getElementById('jitsi-container');
         const hostOptions = {
-            roomName: 'your-room-name', // Replace with your room name
+            roomName: 'ConsecutiveMonksWaterForward', // Replace with your room name
             parentNode: hostContainer,
         };
         const hostApi = new JitsiMeetExternalAPI('meet.jit.si', hostOptions);
@@ -288,7 +296,7 @@ iframe {
         // Initialize Jitsi for the participant
         const participantContainer = document.getElementById('participant-jitsi-container');
         const participantOptions = {
-            roomName: 'your-room-name', // Replace with the same room name as the host
+            roomName: 'ConsecutiveMonksWaterForward', // Replace with the same room name as the host
             parentNode: participantContainer,
         };
         const participantApi = new JitsiMeetExternalAPI('meet.jit.si', participantOptions);
