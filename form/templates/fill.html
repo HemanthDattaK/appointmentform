@@ -189,6 +189,7 @@ iframe {
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
+    <script src="https://meet.jit.si/external_api.js"></script>
 
 </head>
 <body>
@@ -270,8 +271,30 @@ iframe {
 </h6>
 </div>    
 
-    <iframe src="https://app.zoom.us/wc/85855809239/start"></iframe>
-<br><br>
+  <div id="jitsi-container"></div>
+
+    <script>
+        // Function to initialize the Jitsi Meet API
+        function initJitsiMeet() {
+            const domain = 'meet.jit.si'; // Replace with your Jitsi Meet domain
+            const options = {
+                roomName: 'your-room-name', // Replace with your desired room name
+                width: 800, // Set the width of the video container
+                height: 600, // Set the height of the video container
+            };
+            
+            // Create a new Jitsi Meet API object with your options
+            const api = new JitsiMeetExternalAPI(domain, options);
+
+            // Optionally, you can listen to events or execute other code here
+            api.addEventListener('videoConferenceJoined', () => {
+                console.log('Conference joined');
+            });
+        }
+
+        // Call the initJitsiMeet function when the page loads
+        window.onload = initJitsiMeet;
+    </script><br><br>
 {% if messages %}
 <ul class="messages">
   {% for message in messages %}
