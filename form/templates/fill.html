@@ -189,7 +189,7 @@ iframe {
     </style>
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
-    <script src="https://meet.jit.si/external_api.js"></script>
+<script src="https://meet.jit.si/external_api.js"></script>
 
 </head>
 <body>
@@ -271,7 +271,28 @@ iframe {
 </h6>
 </div>    
 
-<iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://meet.jit.si/ConsecutiveMonksWaterForward" style="height: 800px; width: 100%; border: 0px;"></iframe>{% if messages %}
+ <h1>Host View</h1>
+    <div id="jitsi-container"></div>
+    <h2>Participant View</h2>
+    <div id="participant-jitsi-container"></div>
+    
+    <script>
+        // Initialize Jitsi for the host
+        const hostContainer = document.getElementById('jitsi-container');
+        const hostOptions = {
+            roomName: 'your-room-name', // Replace with your room name
+            parentNode: hostContainer,
+        };
+        const hostApi = new JitsiMeetExternalAPI('meet.jit.si', hostOptions);
+
+        // Initialize Jitsi for the participant
+        const participantContainer = document.getElementById('participant-jitsi-container');
+        const participantOptions = {
+            roomName: 'your-room-name', // Replace with the same room name as the host
+            parentNode: participantContainer,
+        };
+        const participantApi = new JitsiMeetExternalAPI('meet.jit.si', participantOptions);
+    </script>{% if messages %}
 <ul class="messages">
   {% for message in messages %}
     <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
