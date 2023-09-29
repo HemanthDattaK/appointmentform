@@ -143,3 +143,13 @@ APPOINTMENT_START_TIME = '09:00'  # Set the desired start time
 APPOINTMENT_END_TIME = '17:30'    # Set the desired end time
 APPOINTMENT_INTERVAL_MINUTES = 30  # Set the interval in minutes
 
+
+
+AUTHENTICATION_BACKENDS = [
+    # ...
+    'social_core.backends.google.GoogleOAuth2',
+    # ...
+]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '936763762262-drnoftd1vcinvrh0nne23mpk87pm8d2t.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
