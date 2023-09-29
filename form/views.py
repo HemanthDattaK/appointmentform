@@ -226,19 +226,5 @@ def set_appointment_limits(request):
 def afterview(request):
     return render(request,'admin.html')
 
-
-def generate_jwt_token(request):
-    # Replace with your secret key and payload data
-    secret_key = '1234'
-    payload = {
-        'sub': 'user123',  # Subject (typically user ID)
-        'role': 'moderator',  # Role (e.g., moderator, participant)
-        # Add any other relevant data here
-    }
-
-    # Generate the JWT token
-    token = jwt.encode(payload, secret_key, algorithm='HS256')
-
-    # Redirect to the Jitsi Meet URL with the token as a parameter
-    jitsi_url = f'https://meet.jit.si/ConsecutiveMonksWaterForward?jwt={token}'
-    return HttpResponse(f'<a href="{jitsi_url}">Join Jitsi Meet</a>')
+def meeting(request):
+    return render(request,'meeting.html')
