@@ -10,5 +10,6 @@ urlpatterns = [
     path('after/', views.afterview, name='after'),  # Requires authentication
     path('delete_contact/', views.contact_display_view, name='contact_delete'),
     path('generate_token/', views.generate_jwt_token, name='generate_jwt_token'),
+    path('meeting/', views.meeting, name='meeting'),  # Requires authentication
 
 ]
