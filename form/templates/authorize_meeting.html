@@ -12,9 +12,9 @@
         <input type="text" id="phonenumber" name="phonenumber" required>
         <button type="submit">Authorize</button>
     </form>
-    
-    {% if not authorized %}
-    <p>You are not authorized to access this meeting.</p>
+     {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
     {% endif %}
+    
 </body>
 </html>
