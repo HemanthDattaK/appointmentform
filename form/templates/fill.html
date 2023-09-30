@@ -288,23 +288,7 @@ iframe {
 
 
 
-    <script>
-        // Initialize Jitsi for the host
-        const hostContainer = document.getElementById('jitsi-container');
-        const hostOptions = {
-            roomName: 'ConsecutiveMonksWaterForward', // Replace with your room name
-            parentNode: hostContainer,
-        };
-        const hostApi = new JitsiMeetExternalAPI('meet.jit.si', hostOptions);
-
-        // Initialize Jitsi for the participant
-        const participantContainer = document.getElementById('participant-jitsi-container');
-        const participantOptions = {
-            roomName: 'ConsecutiveMonksWaterForward', // Replace with the same room name as the host
-            parentNode: participantContainer,
-        };
-        const participantApi = new JitsiMeetExternalAPI('meet.jit.si', participantOptions);
-    </script>{% if messages %}
+   {% if messages %}
 <ul class="messages">
   {% for message in messages %}
     <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
