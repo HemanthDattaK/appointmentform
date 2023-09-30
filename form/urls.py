@@ -7,8 +7,10 @@ urlpatterns = [
     path('', views.contact_view, name='contact'),
     path('success/', views.success, name='success'),
     path('set/', views.set_appointment_times, name='set_times'),
-    path('after/', views.afterview, name='after'),  # Requires authentication
+    path('after/', views.afterview, name='after'), 
     path('delete_contact/', views.contact_display_view, name='contact_delete'),
-    path('meeting/', views.meeting, name='meeting'),  # Requires authentication
+    path('meeting/', views.meeting, name='meeting'),  
+    path('meeting/', views.help, name='help'),  
+
 
 ]
