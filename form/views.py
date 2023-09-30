@@ -9,7 +9,6 @@ from datetime import datetime, timedelta
 from django.conf import settings
 from twilio.base.exceptions import TwilioRestException
 from django.contrib.auth.decorators import login_required
-import jwt
 from django.http import HttpResponse
 
 
