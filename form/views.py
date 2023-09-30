@@ -242,6 +242,6 @@ def authorize_meeting(request):
             return redirect('meeting')  # Redirect to the meeting page
         except Contact.DoesNotExist:
             # Phone number not found in the appointments database
-            return render(request, 'meeting.html', {'authorized': False})
+            return render(request, 'authorize_meeting.html', {'authorized': False})
 
     return render(request, 'authorize_meeting.html')
