@@ -12,9 +12,8 @@
         <input type="text" id="phonenumber" name="phonenumber" required>
         <button type="submit">Authorize</button>
     </form>
-{% if not authorized %}
+    {% if not authorized %}
         <p class="error-message">Phone number not authorized.</p>
     {% endif %}
-    
 </body>
 </html>
