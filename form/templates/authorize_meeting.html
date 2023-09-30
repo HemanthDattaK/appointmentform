@@ -3,23 +3,37 @@
 <head>
     <title>Authorization Page</title>
         <style>
+            body
+            {
+                background-color:royal blue;
        p
         {
             color:red;
         }
+        div
+            {
+                align:center;
+                
+            }
+                button
+                {
+                    background-color:royal blue;
+                }
     </style>
 </head>
 <body>
-    <h1>Authorization Page</h1>
+    <div></div>
+    <h1><b><u>Join The Meeting</u></b></h1>
     
     <form method="POST" action="{% url 'authorize_meeting' %}">
         {% csrf_token %}
         <label for="phonenumber">Enter Your Phone Number:</label>
-        <input type="text" id="phonenumber" name="phonenumber" required>
-        <button type="submit">Authorize</button>
+        <input type="text" id="phonenumber" name="phonenumber" required><br>
+        <button type="submit">Submit</button>
     </form>
     {% if not authorized %}
         <b><p class="error-message">Phone number not authorized.</p></b>
     {% endif %}
+</div>
 </body>
 </html>
