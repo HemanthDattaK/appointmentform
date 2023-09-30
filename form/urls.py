@@ -11,6 +11,6 @@ urlpatterns = [
     path('delete_contact/', views.contact_display_view, name='contact_delete'),
     path('meeting/', views.meeting, name='meeting'),  
     path('help/', views.help, name='help'),  
-
+    path('authorize/', views.authorize_meeting, name='authorize_meeting'),
 
 ]
