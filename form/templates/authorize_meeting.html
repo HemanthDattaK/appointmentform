@@ -8,8 +8,8 @@
     
     <form method="POST" action="{% url 'authorize_meeting' %}">
         {% csrf_token %}
-        <label for="phone_number">Enter Your Phone Number:</label>
-        <input type="text" id="phone_number" name="phone_number" required>
+        <label for="phonenumber">Enter Your Phone Number:</label>
+        <input type="text" id="phonenumber" name="phonenumber" required>
         <button type="submit">Authorize</button>
     </form>
     
