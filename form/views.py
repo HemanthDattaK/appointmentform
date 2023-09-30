@@ -227,3 +227,6 @@ def afterview(request):
 
 def meeting(request):
     return render(request,'meeting.html')
+
+def help(request):
+    return render(request,'help.html')
