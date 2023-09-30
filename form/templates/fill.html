@@ -200,14 +200,7 @@ iframe {
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
 <script src="https://meet.jit.si/external_api.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script>
-  gapi.load('auth2', function() {
-    gapi.auth2.init({
-      client_id: '936763762262-drnoftd1vcinvrh0nne23mpk87pm8d2t.apps.googleusercontent.com',
-    });
-  });
-</script>
+
 </head>
 <body>
 
@@ -224,7 +217,7 @@ iframe {
         <a href="#contact"><i class="fa-solid fa-user"></i><br>Contact</a>
         <a href="{% url 'contact' %}"><i class="fa-solid fa-calendar-check"></i><br>Book An Appointment</a>
         <a href="{% url 'login' %}"><i class="fa-sharp fa-solid fa-user"></i><br>Admin login</a>
-        <a href="{% url 'meeting' %}"><i class="fa-sharp fa-solid fa-user"></i><br>Join the Meeting</a>
+        <a href="{% url 'meeting' %}"><i class="fa-solid fa-video" style="color: #ffffff;"></i>br>Join the Meeting</a>
       </div>
     </div>
       <div class="carousel">
