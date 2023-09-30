@@ -12,8 +12,50 @@
   </style>
 </head>
 <body>
-    <iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://meet.jit.si/SubjectPursuitsRangeCuriously" style="height: 800px; width: 1800px; border: 0px;"></iframe>     
+   <div class="iframe-container">
+    <iframe id="my-iframe" allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://meet.jit.si/SubjectPursuitsRangeCuriously" style="height: 800px; width: 1800px; border: 0px;"></iframe>     
+<button id="fullscreen-button">Fullscreen</button>
+    </div>
+<script>
+       // Get the iframe and button elements
+const iframe = document.getElementById('my-iframe');
+const fullscreenButton = document.getElementById('fullscreen-button');
 
+// Function to enter fullscreen mode
+function enterFullscreen() {
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+    }
+}
 
+// Function to exit fullscreen mode
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+    }
+}
+
+// Toggle fullscreen on button click
+fullscreenButton.addEventListener('click', () => {
+    if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+        exitFullscreen();
+    } else {
+        enterFullscreen();
+    }
+});
+
+    </script>
 </body>
 </html>
