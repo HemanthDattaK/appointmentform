@@ -237,7 +237,7 @@ def authorize_meeting(request):
 
         # Check if the entered phone number exists in the database
         try:
-            appointment = Appointment.objects.get(phonenumber=enteredphonenumber)
+            appointment = Contact.objects.get(phonenumber=enteredphonenumber)
             # Phone number exists in the appointments database
             return redirect('meeting')  # Redirect to the meeting page
         except Appointment.DoesNotExist:
