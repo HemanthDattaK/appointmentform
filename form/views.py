@@ -240,7 +240,7 @@ def authorize_meeting(request):
             appointment = Contact.objects.get(phonenumber=enteredphonenumber)
             # Phone number exists in the appointments database
             return redirect('meeting')  # Redirect to the meeting page
-        except Appointment.DoesNotExist:
+        except Contact.DoesNotExist:
             # Phone number not found in the appointments database
             return render(request, 'meeting.html', {'authorized': False})
 
