@@ -29,7 +29,7 @@
     }
                 button
                 {
-                    color:royalblue;
+                    background-color:royalblue;
                     align:center;
                 }
     </style>
@@ -42,7 +42,7 @@
     <form method="POST" action="{% url 'authorize_meeting' %}">
         {% csrf_token %}
         <label for="phonenumber">Enter Your Phone Number:</label>
-        <input type="text" id="phonenumber" name="phonenumber" required><br>
+        <input type="text" id="phonenumber" name="phonenumber" required><br><br><br>
         <button type="submit">Submit</button>
     </form>
     {% if not authorized %}
