@@ -25,6 +25,7 @@
       background-color:white;
       width:500px;
       height:200px;
+     text-align:center;
     }
                 button
                 {
@@ -36,7 +37,7 @@
 <body>
     <div class-"container">
         <div class="centered-div">
-    <h1><b><u>Join The Meeting</u></b></h1>
+    <center><h1><b>Join The Meeting</b></h1>
     
     <form method="POST" action="{% url 'authorize_meeting' %}">
         {% csrf_token %}
@@ -47,6 +48,7 @@
     {% if not authorized %}
         <b><p class="error-message">Phone number not authorized.</p></b>
     {% endif %}
+    </center>
 </div>
     </div>
 </body>
