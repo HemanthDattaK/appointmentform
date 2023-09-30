@@ -232,18 +232,20 @@ def help(request):
     return render(request,'help.html')
 
 def authorize_meeting(request):
+    authorized = True  # Assume authorization is successful by default
+
     if request.method == 'POST':
         enteredphonenumber = request.POST.get('phonenumber', '')
 
         # Check if the entered phone number exists in the database
         try:
-            appointment = Contact.objects.get(phonenumber=enteredphonenumber)
+            contact = Contact.objects.get(phonenumber=enteredphonenumber)
             # Phone number exists in the appointments database
             return redirect('meeting')  # Redirect to the meeting page
         except Contact.DoesNotExist:
             # Phone number not found in the appointments database
-            return render(request, 'authorize_meeting.html', {'authorized': False})
-            error_message = "Phone number not authorized."  # Set the error message
+            authorized = False  # Set authorized to False
 
+    return render(request, 'authorize_meeting.html', {'authorized': authorized})
 
     return render(request, 'authorize_meeting.html')
