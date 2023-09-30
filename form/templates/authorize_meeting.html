@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authorization Page</title>
+</head>
+<body>
+    <h1>Authorization Page</h1>
+    
+    <form method="POST" action="{% url 'authorize_meeting' %}">
+        {% csrf_token %}
+        <label for="phone_number">Enter Your Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <button type="submit">Authorize</button>
+    </form>
+    
+    {% if not authorized %}
+    <p>You are not authorized to access this meeting.</p>
+    {% endif %}
+</body>
+</html>
