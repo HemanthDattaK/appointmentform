@@ -243,5 +243,7 @@ def authorize_meeting(request):
         except Contact.DoesNotExist:
             # Phone number not found in the appointments database
             return render(request, 'authorize_meeting.html', {'authorized': False})
+            error_message = "Phone number not authorized."  # Set the error message
+
 
     return render(request, 'authorize_meeting.html')
