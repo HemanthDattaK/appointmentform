@@ -1,318 +1,247 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
-    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-    <meta name="mobile-web-app-capable" content="yes">
-    <script src="https://meet.jit.si/external_api.js"></script>
-    <script src="https://kit.fontawesome.com/1db75a16db.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+<link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+<title>Appointment Form</title>
+<script src="https://meet.jit.si/external_api.js"></script>
+<script src="https://kit.fontawesome.com/1db75a16db.js" crossorigin="anonymous"></script>
 
-    <title>Contact Form</title>
-    <style>
-
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+<style>
+/* Reset & global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
+body {
+  background-color: #f5f6fa;
+  color: #333;
+  line-height: 1.6;
+}
 
 /* Navigation */
 .topnav {
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background: #1e1e2f;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin: 20px;
 }
 
 .topnav a {
-    float: left;
-    color: white ;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: "Lucida Console", Monaco, monospace;
-
-
+  color: #fff;
+  text-align: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
 }
 
 .topnav a:hover {
-
-  border-bottom: 3px solid #3366ff;
+  background: #3366ff;
+  color: #fff;
+  transform: scale(1.05);
 }
-
 
 /* Carousel */
 .carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-top: 20px;
+  position: relative;
+  margin: 30px auto;
+  max-width: 90%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  animation: slide 15s infinite;
 }
 
 .slide {
-    flex: 0 0 100%;
+  min-width: 100%;
+  transition: 0.5s ease-in-out;
+  text-align: center;
+  background: #0000001a;
 }
 
-@keyframes moveLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+.slide img {
+  width: 100%;
+  border-bottom: 5px solid #3366ff;
+  border-radius: 8px;
 }
 
-.carousel-inner {
-    animation: moveLeft 15s infinite;
+.slide h1 {
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 8px;
+  margin-top: -50px;
+  font-size: 24px;
 }
 
-
-.img1
-{
-  border-radius:50%;
-  width:75px
+@keyframes slide {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
 }
 
+/* Info Cards */
 .container {
-            width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .chan1 {
-            background-color: black;
-            color: white;
-            float: left;
-            flex: 1;
-            padding: 10px;
-            box-sizing: border-box;
-            padding: 50px;
-            border: 50px solid white;
-            width: 100%;
-            display: inline-block;
-        }
-
-        @media screen and (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Stack divs vertically on smaller screens */
-            }
-        }
-
-        .center-text {
-            text-align: center;
-        }
-.mangimg
-{
- float: none;
-                width: 100%;}
-.mang
-{
-                max-height: none;
-}
- .isro {
-                max-height: none;
-            }
-.isroimg {
-                float: none;
-                width: 100%;
-            }
-.div1 {
-  width: 100%; /* Set an appropriate width for your layout */
-  height: 600px;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;
-  border: 10px solid #3366ff;
-  background-color: #3366ff;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px auto;
+  gap: 20px;
 }
 
-.div1-2
-{
-  background-color:white;
-  width:600px;
-  height:500px;
-  font-family: "Lucida Console", Monaco, monospace;
-
+.chan1 {
+  background: #fff;
+  flex: 1 1 300px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.appimg
-{
-  width:200px;
-  height:100px;
-}
-.sbt
-{
-  background-color:#3366ff; 
-  color:white;
-  width:300px;
-  height:25px;
-  border-radius:8%;
-  border:1px solid #fff;
-}
-form{
-  display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px; /* Adjust the value as needed */
-    align:center;
-
-}
-.nav 
-{
-  float:left;
+.chan1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
-.galaxy
-{
-     background-image:url("https://cdn.wallpapersafari.com/80/31/8uLjyU.jpg");
-     background-size: 1800px 900px;
-
-}
-.details
-{
-  color:white;
-}
-hr {
-  display: block;
-  border: none;
-  height: 20px;
-  width: 75%; /* Ensure the hr spans the entire width */
-  background-image: url("https://tse3.mm.bing.net/th?id=OIP.gINj2IolNwkK05eccru_TQAAAA&pid=Api&P=0&h=180");
+.chan1 img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  margin-bottom: 15px;
 }
 
-iframe {
-    width: 100%;
-    height: 1000px;
+/* HR styling */
+hr {
+  width: 60%;
+  height: 5px;
+  border-radius: 50%;
+  border: none;
+  margin: 50px auto;
+  background-image: linear-gradient(90deg, #3366ff, #33ccff);
 }
-        #jitsi-container
-        {
-            height: 900px;
-        }
-        #participant-jitsi-container
-        {
-            height: 900px;
-        }
-    </style>
-   
 
+/* Text sections */
+.galaxy {
+  background-image: url("https://cdn.wallpapersafari.com/80/31/8uLjyU.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  border-radius: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* Form */
+form {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button.sbt {
+  background: #3366ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.sbt:hover {
+  background: #254eda;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .topnav {
+    flex-direction: column;
+  }
+  .topnav a {
+    margin: 5px 0;
+  }
+}
+</style>
 </head>
+
 <body>
 
-
- <center>
-  <h1><b><u>APPOINTMENT FORM</u></b></h1>
+<center>
+  <h1 style="margin-top: 30px; color:#1e1e2f;">APPOINTMENT FORM</h1>
 
 <div class="galaxy">  
-
     <div class="topnav">
-      <div class="nav">
-        <a href="{% url 'contact' %}"><i class="fa-solid fa-house"></i><br><br>Home</a>
-        <a href="#news"><i class="fa-solid fa-newspaper"></i><br><br>News</a>
-        <a href="#contact"><i class="fa-solid fa-user"></i><br><br>Contact</a>
-        <a href="{% url 'contact' %}"><i class="fa-solid fa-calendar-check"></i><br><br>Book An Appointment</a>
-        <a href="{% url 'login' %}"><i class="fa-sharp fa-solid fa-user"></i><br><br>Admin login</a>
-        <a href="{% url 'authorize_meeting' %}"><i class="fa-solid fa-video" style="color: #ffffff;"></i><br><br>Join the Meeting</a>
-         <a href="{% url 'help' %}"><i class="fa-solid fa-question" style="color: #ffffff;"></i><br><br>Help</a>
-      </div>
+        <a href="{% url 'contact' %}"><i class="fa-solid fa-house"></i><br>Home</a>
+        <a href="#news"><i class="fa-solid fa-newspaper"></i><br>News</a>
+        <a href="#contact"><i class="fa-solid fa-user"></i><br>Contact</a>
+        <a href="{% url 'contact' %}"><i class="fa-solid fa-calendar-check"></i><br>Book An Appointment</a>
+        <a href="{% url 'login' %}"><i class="fa-sharp fa-solid fa-user"></i><br>Admin login</a>
+        <a href="{% url 'authorize_meeting' %}"><i class="fa-solid fa-video"></i><br>Join the Meeting</a>
+        <a href="{% url 'help' %}"><i class="fa-solid fa-question"></i><br>Help</a>
     </div>
-      <div class="carousel">
-            <div class="carousel-inner">
-              <div class="slide">
-                <img src="https://www.hindustantimes.com/ht-img/img/2023/08/20/550x309/ANI-20230820127-0_1692553997653_1692554011581.jpg" alt="Slide 1"><br><h1>Chandrayaan3</h1>
-              </div>
-              <div class="slide">
-                <img src="https://thecryoclinic.com/wp-content/uploads/2019/01/Book-Your-Appointment-580x362.png" alt="Slide 2"><br><h1></h1>
-              </div>
-              
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="slide">
+                <img src="https://www.hindustantimes.com/ht-img/img/2023/08/20/550x309/ANI-20230820127-0_1692553997653_1692554011581.jpg" alt="Slide 1">
+                <h1>Chandrayaan3</h1>
             </div>
-        <div class="details">  
-          <h3><b>Abbreviation:</b>ISRO</h3>
-        <h3><b>Formed	15 August 1969:</b> 54 years ago</h3>
-          <h3><b>Preceding agency:</b> INCOSPAR</h3>
-            <h3><b>Type:</b>	Space agency</h3>
-              <h3> <b>Jurisdiction:</b>	Department of Space</h3>
-                <h3><b>Headquarters:</b>	Bangalore, Karnataka</h3>
-                  <h3><b>12°57′56″N 77°41′53″E</h3>
-                    <h3><b>Chairman:</b>	Sreedhara Somanath</h3>
-                      <h3> <b>Primary spaceports:</b> SDSCTERLS</h3>
-     <h3><b>Owner:</b>	Government of India</h3>
-        <h3><b>Employees:</b> 16,786 (2022)</h3>
-                  </div>
-</div>
-</div>                    
-          <div class="container">
-        <div class="chan1">
-          <h6>CHANDRAYAAN-1</h6>
-          <img src="data:image/jpeg;base64,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" alt="not available" class="img1">
-          <p>Chandrayaan-1 was the first Indian lunar probe under the Chandrayaan programme. It was launched by the Indian Space Research Organisation (ISRO) in October 2008, and operated until August 2009. </p>
+            <div class="slide">
+                <img src="https://thecryoclinic.com/wp-content/uploads/2019/01/Book-Your-Appointment-580x362.png" alt="Slide 2">
+            </div>
         </div>
-
-        <div class="chan1">
-          <h6>CHANDRAYAAN-2</h6>
-          <img src="https://www.isro.gov.in/media_isro/image/media/Missions/Spacecraft/resized/chandrayaan_2_large.jpg.webp" alt="not available"  class="img1">
-        <p>Chandrayaan-2 "mooncraft"; pronunciation is the second lunar exploration mission developed by the Indian Space Research Organisation (ISRO), after Chandrayaan-1. It consists of a lunar orbiter, the Vikram lander and the Pragyan rover, all of which were developed in India</p>
-        </div>
-        <div class="chan1">
-          <h6>CHANDRAYAAN-2</h6>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGMQKsfXWQ6Af_V8nJR_bsnQovuNnHuA4jAQ&usqp=CAU" alt="not available" class="img1">
-          <p>Chandrayaan-3  Moon-craft, pronunciation is the third and most recent Indian lunar exploration mission under the Chandrayaan programme of ISRO.[8] It consists of a lander named Vikram and a rover named Pragyan similar to Chandrayaan-2.</p>    
-        </div>
-      </div><br><br><br>
-      <hr><br><br>
     </div>
+</div>
+
+<div class="container">
+  <div class="chan1">
+    <h6>CHANDRAYAAN-1</h6>
+    <img src="data:image/jpeg;base64,/9j/4AAQSk..." alt="Chandrayaan-1">
+    <p>Chandrayaan-1 was the first Indian lunar probe under the Chandrayaan programme. Launched in October 2008.</p>
   </div>
-      <div class="mang">
-        <div class="mangimg">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUpbdCZl9gobAd9S4e3dg0qT2uch7qfVTclg&usqp=CAU" alt="not available"><br>
-        </div><br><br><br>
-        <h6>The Mars Orbiter Mission (MOM), unofficially termed as Mangalyaan,[11] (from Sanskrit: Mangala, "Mars" and yāna, "craft, vehicle")[12][13] was a space probe orbiting Mars since 24 September 2014. It was launched on 5 November 2013 by the Indian Space Research Organisation (ISRO).[14][15][16][17] It was India's first interplanetary mission[18] and it made ISRO the fourth space agency to achieve Mars orbit, after Roscosmos, NASA, and the European Space Agency.[19] It made India the first Asian nation to reach the Martian orbit and the first nation in the world to do so on its maiden attempt.</h6>
-      </div><br><br><br>
-      <hr><br><br><br>
-      <div class="isro">
-        <div class="isroimg">
-          <img src="data:image/png;base64,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" alt="not available">
-        </div>
-       <h6> The Indian Space Research Organisation, commonly referred to as ISRO , is the national space agency of India. It operates as the primary research and development arm of the Department of Space (DoS), which is directly overseen by the Prime Minister of India, while the Chairman of ISRO also acts as the executive of DoS.
-            ISRO is primarily responsible for performing tasks related to space-based operations, space exploration, international space cooperation and the development of related technologies.[2] It is one of the six government space agencies in the world which possess full launch capabilities, deploy cryogenic engines, launch extraterrestrial missions and operate a large fleet of artificial satellites.
-</h6>
-</div><br><br>
-
-      <hr><br><br><br>
-
-
-   {% if messages %}
-<ul class="messages">
-  {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-  {% endfor %}
-</ul>
-{% endif %}
-
-        <div class="div1">
-         
-          <div class="div1-2"><br><br>
-          <h1 style="color:#3366ff"><b>Book An Appointment</b></h1><br><br><br>
-         
-          <form method="post">
-              {% csrf_token %}
-              {{ form.as_p }}<br><br>
-              <cenetr><button type="submit" class="sbt">Submit</button></center>     
-
-            </form><br><br><br>
-
-          </div>
+  <div class="chan1">
+    <h6>CHANDRAYAAN-2</h6>
+    <img src="https://www.isro.gov.in/media_isro/image/media/Missions/Spacecraft/resized/chandrayaan_2_large.jpg.webp" alt="Chandrayaan-2">
+    <p>Chandrayaan-2: Second lunar exploration mission by ISRO, with orbiter, lander, and rover.</p>
+  </div>
+  <div class="chan1">
+    <h6>CHANDRAYAAN-3</h6>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGMQKsfXWQ6Af_V8nJR_bsnQovuNnHuA4jAQ&usqp=CAU" alt="Chandrayaan-3">
+    <p>Chandrayaan-3: Third lunar mission with lander Vikram and rover Pragyan.</p>
+  </div>
 </div>
-    <br>
 
-</div>
+<hr>
+
+</center>
+</body>
 </html>
